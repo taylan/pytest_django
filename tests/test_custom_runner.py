@@ -13,6 +13,7 @@ CUSTOM_RUNNER_IMPL = '''
 try:
     from django.test.runner import DiscoverRunner as DjangoTestRunner
 except ImportError:
+    # For compatibility with Django<1.6
     from django.test.simple import DjangoTestSuiteRunner as DjangoTestRunner
 
 class CustomTestRunner(DjangoTestRunner):
